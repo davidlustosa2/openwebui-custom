@@ -26,3 +26,5 @@ COPY favicon.png /app/backend/open_webui/static/splash.png
 
 COPY favicon.png /app/build/static/splash-dark.png
 COPY favicon.png /app/backend/open_webui/static/splash-dark.png
+
+RUN sed -i 's|<title>Open WebUI</title>|<title>VOXCIVIS</title>|g' /app/build/index.html
