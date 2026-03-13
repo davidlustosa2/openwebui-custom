@@ -27,4 +27,18 @@ COPY favicon.png /app/backend/open_webui/static/splash.png
 COPY favicon.png /app/build/static/splash-dark.png
 COPY favicon.png /app/backend/open_webui/static/splash-dark.png
 
+# =========================
+# Título da aba
+# =========================
 RUN sed -i 's|<title>Open WebUI</title>|<title>VOXCIVIS</title>|g' /app/build/index.html
+
+# =========================
+# Texto "Open WebUI" no frontend
+# Faz substituição nos arquivos compilados
+# =========================
+RUN grep -RIl "Open WebUI" /app/build | xargs -r sed -i 's/Open WebUI/VOXCIVIS/g'
+
+# =========================
+# Segurança extra: tenta também no backend
+# =========================
+RUN grep -RIl "Open WebUI" /app/backend | xargs -r sed -i 's/Open WebUI/VOXCIVIS/g'
