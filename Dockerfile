@@ -36,9 +36,9 @@ RUN sed -i 's|<title>Open WebUI</title>|<title>VoxCivs</title>|g' /app/build/ind
 # Texto "Open WebUI" no frontend
 # Faz substituição nos arquivos compilados
 # =========================
-RUN grep -RIl "Open WebUI" /app/build | xargs -r sed -i 's/Open WebUI/VoxCivs/g'
+RUN grep -RIl "Open WebUI" /app/build | xargs -r sed -i 's/Open WebUI/VoxCivis/g'
 
 # =========================
 # Segurança extra: tenta também no backend
 # =========================
-RUN grep -RIl "Open WebUI" /app/backend | xargs -r sed -i 's/Open WebUI/VoxCivs/g'
+RUN grep -RIl "Open WebUI" /app/backend | xargs -r sed -i 's/Open WebUI/VoxCivis/g'
